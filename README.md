@@ -13,11 +13,13 @@ Unlike other products on the market, it should be BETTER and CHEAPER. Choosen IC
 
 FPGA is installed on a Mezzzanine/SOM type architecture, that allows flexibility, and potential cheaper reparation/maintenance.
 
-The BackBoard adopts a "cover-them-all" approach where any Xilinx Ultrascale/Ultrascale+ FPGA can be installed, as long as there is an existing mezzanine/SOM for it. Many aspects of the design has been over-engineered, that can be simplified on a potential V2.0 of the BackBoard.
+The Backplane adopts a "cover-them-all" approach where any Xilinx Ultrascale/Ultrascale+ FPGA can be installed, as long as there is an existing mezzanine/SOM for it. Many aspects of the design has been over-engineered, that can be simplified on a potential V2.0 of the Backplane.
 
 Shematic design and PCB layout had been done on Kicad, a free tool.
 
-First set of prototypes produced already and running continuously since 2022 with XCU9P. An exemple of FPGA code and bitstream can be found [here](https://github.com/OlivierHK/FPGA_Monolithic_SHA3-Solidity_Miner_VU9p_600MHz).
+First set of prototypes produced already and running continuously since 2022 with XCVU9P. An exemple of FPGA code and bitstream can be found [here](https://github.com/OlivierHK/FPGA_Monolithic_SHA3-Solidity_Miner_VU9p_600MHz).
+
+All firmawres (including Arduino one, with specification for the board management) can be find in this project repository. 
 
 As for 2025, a [V2.0](https://github.com/OlivierHK/Alto_UltraP_Mezzanine_V2.0) of the mezzanine had been produced and validated already.
 
@@ -29,7 +31,7 @@ The Mezzanine fits a XCVU9P-2FLGA2104I. There is direct compatibility with XCVU5
 
 ### Specification listing
 
-- x1 PCIe card format. Height a bit extended. Can fit in tube-like miner, with 2 boards. ~350W per board.
+- x1 PCIe card format. Height a bit extended. Can fit in tube-like miner, with 2 boards. ~480W per board max.
 - x2 FPGAs per board. x2 boards per system set:
   - x1 Master Board, x1 slave board. Connected by a flat cable & Sata(Via Aurora x1 8b/10b). Master/Slave set by jumpers on the board.
   - On-board FPGAs interconnected by Aurora x1 8b/10b.
