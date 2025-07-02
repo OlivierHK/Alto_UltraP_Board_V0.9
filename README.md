@@ -1,4 +1,4 @@
-# Alto_UltraP_Board V1.0
+# Alto_UltraP_Platform V1.0
 
 ## Project Summary
 
@@ -70,9 +70,9 @@ Schematic's comments should cover all the specifications of the platform.
 For the detailed Specification document, please contact the Author at olivier.faurie.hk@gmail.com. 
 
 # Product delivery
-A Quad FPGA Crypto Mining Platform designed for Xilinx Ultrascale+ VU9P/VU13P over a single USB cable:
+A Quad FPGA Crypto Mining Platform designed for Xilinx Ultrascale+ VU9P/VU13P over a single USB cable. here is the card set as master, with x2 Mezzanines connected. One mezzanine have no FPGA populated, for testing purpose:
 ![Untitled](https://github.com/user-attachments/assets/f3da800b-ec6e-4877-8b1d-7bc5dfcb32a9)
 
 
-System running with custom watercooling:
+System running with custom watercooling, for 1 FPGA only:
 ![Untitled2](https://github.com/user-attachments/assets/dd328e59-1fe9-47dc-863a-1a310da1e685)
