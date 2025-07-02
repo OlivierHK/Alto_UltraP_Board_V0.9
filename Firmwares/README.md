@@ -9,6 +9,8 @@ All needed Firmware can be found in the sub folders.
 1. FTDI Firmware to set the board as a 4x UART/COM port (1 per FPGA), and 1x UART/COM (for Arduino) + 1x JTAG (for FPGAs).
 2. TPS53681 Firmware to pre-set the VCC and VCCIO_BRAM power supply parameter of the FPGA.
 3. Arduino Firmware for controlling and monitoring the board.
+
+4. FPGA Bitstreams (.bit/.bin). This will depends on Which Algorithm to be use for mining.
    
 
 
@@ -58,3 +60,18 @@ Arduino programming should be done only once, when new board received, or when n
 3. open the [Arduino IDE](https://www.arduino.cc/en/software/) and set the correct target (Ardiono Pro Mini, ATMega328P @ 3.3V).
 4. Load the c code `Arduino_V0.x.C` and Launch the programming of the Arduino.
 5. If programming is hanging, you may need to press the reset button on the Arduino to trigger the downloading.
+
+## FPGA Bitstream
+
+One FPGA configuration will be valid for one hashing algorithm only. There is no bitstream attached in this repository. An exemple of a working bitstreamn for Solity-SHA3 for AltoP platform can be find [here](https://github.com/OlivierHK/FPGA_Monolithic_SHA3-Solidity_Miner_VU9p_600MHz).
+
+The FPGA is set for Loading its QSPI Flash first, as soon as `nPROGRAM` pin is released.
+
+- `.bit` is for flashing the FPGA. configuration will be lost after a power cycle. Should be done via the Vivado Hardware Manager directly, via selecting writing FPGA configuration.
+- `.bin` is for writing the QSPI Flash Memory, and is permanent. Should be done via the Vivado Hardware Manager directly, via selecting Flash/QSPI programming.
+
+In order to access the FPGA via JTAG, the AltoP plafform should be powered-on and all power rails enabled.
+
+There is 2 way to Flash the FPGA or write the QSPI memory flash:
+- Via AMD JTAG Programing Dongle plugged on the JTAG port of the BackPlane. Check schematic for setting correctly the jumpers to bypass the FTDI FT2232H.
+- (Recommended) Via the USB cable and embedded JTAG programming cable for flashing FPGA or writing QSPI FLash memory. Check schematic for setting correctly the jumpers to set the FTDI FT2232H as JTAG Master.
